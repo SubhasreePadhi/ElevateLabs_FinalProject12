@@ -1,0 +1,6 @@
+webinsight.s3.amazonaws.com, 
+static.trackedweb.net,
+trackedweb.net,
+r1.trackedweb.net,
+r2.trackedweb.net,
+r3.trackedweb.net
