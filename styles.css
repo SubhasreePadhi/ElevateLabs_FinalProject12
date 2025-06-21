@@ -1,0 +1,23 @@
+/* styles.css */
+
+/* Custom font for a clean look */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    min-width: 280px; /* Adjust popup width as needed */
+    height: 180px; /* Adjust popup height as needed */
+}
+
+/* Ensure the body takes full height for centering */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* Custom styling for focus states if needed beyond Tailwind */
+input:focus, button:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5); /* blue-500 with transparency */
+}

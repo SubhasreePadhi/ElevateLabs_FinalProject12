@@ -1,17 +1,56 @@
-<!-- tracker_blocker_extension/options.html -->
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    body { font-family: Arial, sans-serif; padding: 10px; }
-    textarea { width: 100%; height: 150px; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Shield Settings</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Ensure the body takes full height for centering, similar to popup */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
 </head>
-<body>
-  <h3>Custom Tracker Domains</h3>
-  <textarea id="domainList"></textarea><br>
-  <button id="saveBtn">Save</button>
-  <script src="options.js"></script>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen font-inter">
+    <div class="p-8 bg-white rounded-xl shadow-lg w-full max-w-lg mx-auto">
+        <h1 class="text-3xl font-bold text-gray-800 mb-6 text-center">Privacy Shield Settings</h1>
+
+        <p class="text-gray-700 text-md mb-4">
+            Enter additional tracking domains you wish to block, one per line.
+            These will be added to the default list of blocked trackers.
+        </p>
+
+        <div class="mb-6">
+            <label for="customDomains" class="block text-gray-700 text-sm font-bold mb-2">
+                Custom Domains to Block:
+            </label>
+            <textarea
+                id="customDomains"
+                rows="10"
+                class="shadow appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                placeholder="e.g.,&#10;another-tracker.com&#10;bad-analytics.net"
+            ></textarea>
+            <p class="text-sm text-gray-500 mt-2">Enter one domain per line. Subdomains will be automatically blocked (e.g., entering `tracker.com` will block `sub.tracker.com`).</p>
+        </div>
+
+        <div class="flex items-center justify-between">
+            <button
+                id="saveCustomDomains"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 transition-colors shadow-md"
+            >
+                Save Custom Domains
+            </button>
+            <span id="saveStatus" class="text-sm text-gray-600 ml-4"></span>
+        </div>
+    </div>
+
+    <script src="landing.js"></script>
 </body>
 </html>

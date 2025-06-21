@@ -1,16 +1,33 @@
-// tracker_blocker_extension/popup.html
-
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <style>
-    body { font-family: Arial, sans-serif; width: 200px; padding: 10px; }
-    #count { font-size: 20px; font-weight: bold; }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Shield</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-  <h3>Blocked Trackers</h3>
-  <div id="count">0</div>
-  <script src="popup.js"></script>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen font-inter">
+    <div class="p-6 bg-white rounded-xl shadow-lg w-72">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4 text-center">Privacy Shield</h1>
+
+        <div class="flex items-center justify-between mb-4">
+            <span class="text-gray-700 text-lg">Blocking Enabled:</span>
+            <label for="toggle" class="relative inline-flex items-center cursor-pointer">
+                <input type="checkbox" id="toggle" class="sr-only peer">
+                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-blue-600"></div>
+            </label>
+        </div>
+
+        <p id="statusMessage" class="text-center text-sm text-gray-600 mb-4">Loading status...</p>
+
+        <div class="text-center">
+            <button id="refreshButton" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors shadow-md">
+                Refresh Status
+            </button>
+        </div>
+    </div>
+
+    <script src="popup.js"></script>
 </body>
 </html>
